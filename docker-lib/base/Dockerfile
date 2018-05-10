@@ -34,3 +34,6 @@ ENV PIP_INDEX_URL=http://pypi.douban.com/simple/
 ENV PIP_TRUSTED_HOST=pypi.douban.com
 RUN pip install -U pip
 RUN pip install biopython
+
+RUN apt-get install -y vim
+
