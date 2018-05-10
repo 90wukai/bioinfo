@@ -24,12 +24,13 @@ RUN apt-get clean all  && \
         libncursesw5-dev  \
         libboost-all-dev  \
         zlib1g-dev
-    #apt-get install -y openjdk-8-jdk && \
-    #update-alternatives --config java && \
-    #update-alternatives --config javac && \
+RUN apt-get install -y openjdk-8-jdk
+
 RUN apt-get clean
 RUN apt-get purge
 
 # pip
+ENV PIP_INDEX_URL=http://pypi.douban.com/simple/
+ENV PIP_TRUSTED_HOST=pypi.douban.com
 RUN pip install -U pip
 RUN pip install biopython
